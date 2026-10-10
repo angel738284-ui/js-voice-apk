@@ -1,4 +1,4 @@
-name: JS VOICE v1.3 en el chat
+name: JS VOICE v1.4 en el chat
 on:
   workflow_dispatch:
   push:
@@ -8,12 +8,12 @@ jobs:
   paquete:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar APK v1.3
+      - name: Descargar APK v1.4
         run: |
-          curl --fail --location --retry 5 --output JS-VOICE-v1.3.0-Universal.apk 'https://github.com/angel738284-ui/js-voice-apk/releases/download/v1.3.0/JS-VOICE-v1.3.0-Universal.apk'
-          test "$(stat -c%s JS-VOICE-v1.3.0-Universal.apk)" -eq 27597057
+          curl --fail --location --retry 5 --output JS-VOICE-v1.4.0-Universal.apk 'https://github.com/angel738284-ui/js-voice-apk/releases/download/v1.4.0/JS-VOICE-v1.4.0-Universal.apk'
+          test "$(stat -c%s JS-VOICE-v1.4.0-Universal.apk)" -eq 27613441
       - uses: actions/upload-artifact@v4
         with:
-          name: JS-VOICE-v1.3-ChatGPT
-          path: JS-VOICE-v1.3.0-Universal.apk
+          name: JS-VOICE-v1.4-ChatGPT
+          path: JS-VOICE-v1.4.0-Universal.apk
           retention-days: 7
