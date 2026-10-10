@@ -1,0 +1,19 @@
+name: Empaquetar JS VOICE APK
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/empaquetar-apk.yml'
+jobs:
+  paquete:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar APK
+        run: |
+          curl --fail --location --retry 5 --output JS-VOICE-v1.0.0.apk 'https://github.com/angel738284-ui/js-voice-apk/releases/download/v1.0.0/JS-VOICE-v1.0.0.apk'
+          test "$(stat -c%s JS-VOICE-v1.0.0.apk)" -eq 19426978
+      - uses: actions/upload-artifact@v4
+        with:
+          name: JS-VOICE-APK-ChatGPT
+          path: JS-VOICE-v1.0.0.apk
+          retention-days: 7
