@@ -1,4 +1,4 @@
-name: Empaquetar JS VOICE v1.6
+name: JS VOICE v1.7 in-chat package
 on:
   workflow_dispatch:
   push:
@@ -8,12 +8,12 @@ jobs:
   paquete:
     runs-on: ubuntu-latest
     steps:
-      - name: Descargar y verificar APK
+      - name: Descargar APK v1.7
         run: |
-          curl --fail --location --retry 5 --output JS-VOICE-v1.6.0-Universal.apk 'https://github.com/angel738284-ui/js-voice-apk/releases/download/v1.6.0/JS-VOICE-v1.6.0-Universal.apk'
-          test "$(stat -c%s JS-VOICE-v1.6.0-Universal.apk)" -eq 27629885
+          curl --fail --location --retry 5 --output JS-VOICE-v1.7.0-Universal.apk 'https://github.com/angel738284-ui/js-voice-apk/releases/download/v1.7.0/JS-VOICE-v1.7.0-Universal.apk'
+          test "$(stat -c%s JS-VOICE-v1.7.0-Universal.apk)" -eq 27629889
       - uses: actions/upload-artifact@v4
         with:
-          name: JS-VOICE-v1.6-ChatGPT
-          path: JS-VOICE-v1.6.0-Universal.apk
+          name: JS-VOICE-v1.7-ChatGPT
+          path: JS-VOICE-v1.7.0-Universal.apk
           retention-days: 7
